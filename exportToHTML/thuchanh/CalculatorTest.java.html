@@ -1,0 +1,99 @@
+<html>
+<head>
+<title>CalculatorTest.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #f97bb0; font-weight: bold;}
+.s1 { color: #dfdfe0;}
+.s2 { color: #ff806c;}
+.s3 { color: #d7c781;}
+</style>
+</head>
+<body bgcolor="#292a30">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+CalculatorTest.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">thuchanh;</span>
+
+
+<span class="s0">import </span><span class="s1">org.junit.jupiter.api.DisplayName;</span>
+<span class="s0">import </span><span class="s1">org.junit.jupiter.api.Test;</span>
+
+<span class="s0">import static </span><span class="s1">org.junit.jupiter.api.Assertions.*;</span>
+
+<span class="s0">class </span><span class="s1">CalculatorTest {</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing addition&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateAdd() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">1</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">1</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'+'</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">expected = </span><span class="s3">2</span><span class="s1">;</span>
+
+        <span class="s0">int </span><span class="s1">result = Calculator.calculate(a, b, o);</span>
+        <span class="s1">assertEquals(expected, result);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing subtraction&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateSub() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">2</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">1</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'-'</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">expected = </span><span class="s3">1</span><span class="s1">;</span>
+
+        <span class="s0">int </span><span class="s1">result = Calculator.calculate(a, b, o);</span>
+        <span class="s1">assertEquals(expected, result);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing multiplication&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateMul() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">2</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">2</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'*'</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">expected = </span><span class="s3">4</span><span class="s1">;</span>
+
+        <span class="s0">int </span><span class="s1">result = Calculator.calculate(a, b, o);</span>
+        <span class="s1">assertEquals(expected, result);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing division&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateDiv() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">6</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">3</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'/'</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">expected = </span><span class="s3">2</span><span class="s1">;</span>
+
+        <span class="s0">int </span><span class="s1">result = Calculator.calculate(a, b, o);</span>
+        <span class="s1">assertEquals(expected, result);</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing division by zero&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateDivByZero() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">2</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'/'</span><span class="s1">;</span>
+
+        <span class="s1">assertThrows(RuntimeException.</span><span class="s0">class</span><span class="s1">,</span>
+                <span class="s1">()-&gt; {Calculator.calculate(a, b, o);});</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@Test</span>
+    <span class="s1">@DisplayName(</span><span class="s2">&quot;Testing wrong operator&quot;</span><span class="s1">)</span>
+    <span class="s0">void </span><span class="s1">testCalculateWrongOperator() {</span>
+        <span class="s0">int </span><span class="s1">a = </span><span class="s3">2</span><span class="s1">;</span>
+        <span class="s0">int </span><span class="s1">b = </span><span class="s3">0</span><span class="s1">;</span>
+        <span class="s0">char </span><span class="s1">o = </span><span class="s2">'='</span><span class="s1">;</span>
+
+        <span class="s1">assertThrows(RuntimeException.</span><span class="s0">class</span><span class="s1">,</span>
+                <span class="s1">()-&gt; {Calculator.calculate(a, b, o);});</span>
+    <span class="s1">}</span>
+<span class="s1">}</span></pre>
+</body>
+</html>
